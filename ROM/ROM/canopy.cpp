@@ -41,6 +41,20 @@ void Canopy:: resume_test_LED()
 
 }
 
+void Canopy::start_fade_actuator( int pin, int start_value, int end_value, int frames_to_actuate)
+{
+  behaviours_on[fade_actuator] = true;
+  framecount[fade_actuator] = 0;
+  PWM_fade_actuator[pin] = 0;
+}
+
+void Canopy::resume_fade_actuator(int pin, int start_value, int end_value)
+{
+  
+}
+
+
+
 void Canopy::loop()
 {
   elapsed_millis = millis() - current_millis;
